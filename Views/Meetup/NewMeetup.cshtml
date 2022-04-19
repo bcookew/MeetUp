@@ -1,0 +1,51 @@
+@{
+    ViewData["Title"] = "New Meet Up";
+}
+@model Event
+
+<div class="row">
+    <div class="col-10">
+        <form asp-action="AddEvent" asp-controller="Meetup" method="post">
+            <div class="row">
+                <span class="display-6">Create a Meet Up</span>
+                <div class="col-7">
+                    <div class="form-floating mb-3">
+                        <input class="form-control" asp-for="Name">
+                        <label class="form-label" asp-for="Name"></label>
+                        <span class="form-text" asp-validation-for="Name"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" asp-for="EventStartTime">
+                        <label class="form-label" asp-for="EventStartTime"></label>
+                        <span class="form-text" asp-validation-for="EventStartTime"></span>
+                    </div>
+                    <div class="row">
+                        <div class="col-7">
+                            <div class="form-floating mb-3">
+                                <input class="form-control" asp-for="Duration">
+                                <label class="form-label" asp-for="Duration"></label>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <select class="form-select mb-3" asp-for="TimeMeasure">
+                                <option value="1">Hours</option>
+                                <option value="2">Minutes</option>
+                                <option value="3">Days</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="mb-5">
+                        <label class="form-label" asp-for="Description"></label>
+                        <textarea rows="6" class="form-control" asp-for="Description"></textarea>
+                        <span class="form-text" asp-validation-for="Description"></span>
+                    </div>
+                    <div class="text-end">
+                        <input class="btn btn btn-success" type="submit" value="Create Meet Up">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

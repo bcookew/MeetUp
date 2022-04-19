@@ -1,0 +1,38 @@
+@model Event
+@{
+    ViewData["Title"] = "Model.Name";
+}
+<div class="row justify-content-between align-bottom">
+    <div class="col-auto">
+        <h1 class="display-6">@Model.Name</h1>
+    </div>
+    <div class="col-auto">
+        @if (Model.UserId == ViewBag.UserId)
+        {
+            <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.EventId">Delete</a>
+        }
+        else if (Model.Participants.Any(p => p.UserId == ViewBag.UserId))
+        {
+            <a class="btn btn-success" asp-action="Leave" asp-route-id="@Model.EventId">Leave</a>
+        }
+        else
+        {
+            <a class="btn btn-success" asp-action="Join" asp-route-id="@Model.EventId">Join</a>
+        }
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <h2 class="fs-5">Event Coordinator: @Model.Creator.FirstName @Model.Creator.LastName</h2>
+        <h2 class="fs-5">Description:</h2>
+        <textarea class="form-control-plaintext">@Model.Description</textarea>
+        <h2 class="fs-5">Participants:</h2>
+        <div class="ms-5">
+            @foreach (ParticipantAtEvent p in Model.Participants)
+            {
+                <p class="fs-6">@p.Participant.FirstName @p.Participant.LastName</p>
+            }
+        </div>
+
+    </div>
+</div>

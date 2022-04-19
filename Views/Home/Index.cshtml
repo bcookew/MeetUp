@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model HomepageView
+<div class="mt-5 text-center">
+    <h1 class="display-4 mt-5">Welcome to the Dojo Meet Up Center!</h1>
+    <div class="row text-start justify-content-evenly mt-5">
+        <div class="col-sm-4">
+            <partial name="_RegistrationForm"></partial>
+        </div>
+        <div class="col-sm-4">
+            <partial name="_LoginForm"></partial>
+        </div>
+    </div>
+</div>

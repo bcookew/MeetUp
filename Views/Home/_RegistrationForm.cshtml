@@ -1,0 +1,38 @@
+@{
+    ViewData["Title"] = "Registration Page";
+}
+@model User
+
+<form asp-action="Register" method="post">
+    <div class="row justify-content-center">
+        <h1 class="mb-3">Register</h1>
+        <div class="col text-end">
+            <div class="mb-3 form-floating">
+                <input class="form-control" placeholder="Jodie" asp-for="FirstName"></input>
+                <label class="form-label" asp-for="FirstName"></label>
+                <span class="form-text text-danger" asp-validation-for="FirstName"></span>
+            </div>
+            <div class="mb-3 form-floating">
+                <input class="form-control" placeholder="Whittaker" asp-for="LastName"></input>
+                <label class="form-label" asp-for="LastName"></label>
+                <span class="form-text text-danger" asp-validation-for="LastName"></span>
+            </div>
+            <div class="mb-3 form-floating">
+                <input class="form-control" placeholder="Jodie@DoctorWho.com" asp-for="Email"></input>
+                <label class="form-label" asp-for="Email"></label>
+                <span class="form-text text-danger" asp-validation-for="Email"></span>
+            </div>
+            <div class="mb-3 form-floating">
+                <input class="form-control" placeholder="!AmThe1Doctor" asp-for="Password"></input>
+                <label class="form-label" asp-for="Password"></label>
+                <span class="form-text text-danger" asp-validation-for="Password"></span>
+            </div>
+            <div class="mb-3 form-floating">
+                <input class="form-control" placeholder="!AmThe1Doctor" asp-for="ConfirmPass"></input>
+                <label class="form-label" asp-for="ConfirmPass"></label>
+                <span class="form-text text-danger" asp-validation-for="ConfirmPass"></span>
+            </div>
+            <input type="submit" class="btn btn-success btn-lg" value="Register">
+        </div>
+    </div>
+</form>

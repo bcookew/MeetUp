@@ -1,0 +1,23 @@
+@{
+    ViewData["Title"] = "Login Page";
+}
+@model LoginView
+
+<form asp-action="Login" method="post">
+    <div class="row justify-content-center">
+        <h1 class="mb-3">Login</h1>
+        <div class="col text-end">
+            <div class="mb-3 form-floating">
+                <input class="form-control" placeholder="name@example.com" asp-for="Email"></input>
+                <label class="form-label" asp-for="Email"></label>
+                <span class="form-text text-danger" asp-validation-for="Email"></span>
+            </div>
+            <div class="mb-3 form-floating">
+                <input class="form-control" placeholder="!Password1" asp-for="Password"></input>
+                <label class="form-label" asp-for="Password"></label>
+                <span class="form-text text-danger" asp-validation-for="Password"></span>
+            </div>
+            <input class="btn btn-success btn-lg" type="submit" value="Login">
+        </div>
+    </div>
+</form>
